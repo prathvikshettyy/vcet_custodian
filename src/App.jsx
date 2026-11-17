@@ -1,3 +1,4 @@
+// VCET Custodian - Root Application Component
 import React, { useState, useEffect } from 'react';
 import { NavigationHeader } from './components/NavigationHeader';
 import { WelcomeScreen } from './components/WelcomeScreen';

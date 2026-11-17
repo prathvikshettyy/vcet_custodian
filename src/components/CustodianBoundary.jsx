@@ -1,3 +1,4 @@
+// VCET Custodian UI Component - CustodianBoundary
 import React, { useState } from 'react';
 import { Lock, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { UI_TRANSLATIONS } from '../data/translations';

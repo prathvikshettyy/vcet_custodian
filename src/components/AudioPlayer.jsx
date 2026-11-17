@@ -1,3 +1,4 @@
+// VCET Custodian UI Component - AudioPlayer
 import React, { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, Volume2, Globe } from 'lucide-react';
 import { globalAudio } from '../utils/audioEngine';

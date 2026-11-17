@@ -1,3 +1,4 @@
+// VCET Custodian UI Component - NavigationHeader
 import React, { useState } from 'react';
 import { Compass, Volume2, Eye, Wind, Globe, ChevronDown, Check } from 'lucide-react';
 import { LANGUAGES } from '../data/fieldNotesData';

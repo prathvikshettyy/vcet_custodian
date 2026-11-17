@@ -1,3 +1,4 @@
+// VCET Custodian UI Component - WelcomeScreen
 import React from 'react';
 import { ArrowRight, Compass, ShieldCheck, BookOpen, MapPin, Feather } from 'lucide-react';
 import { UI_TRANSLATIONS } from '../data/translations';

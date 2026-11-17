@@ -1,3 +1,4 @@
+// VCET Custodian UI Component - LivingMap
 import React, { useState } from 'react';
 import { 
   Compass, 

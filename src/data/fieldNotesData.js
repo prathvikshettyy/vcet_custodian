@@ -1,3 +1,4 @@
+// VCET Custodian - Cultural Field Notes & Hotspots
 /**
  * Living Cultural Content Model with Multi-Language Localization
  * Supports English (en), Kannada (kn), Tulu (tu), and Hindi (hi)
