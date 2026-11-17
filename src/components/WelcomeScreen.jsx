@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - WelcomeScreen
 import React from 'react';
 import { ArrowRight, Compass, ShieldCheck, BookOpen, MapPin, Feather } from 'lucide-react';
 import { UI_TRANSLATIONS } from '../data/translations';
@@ -9,7 +8,6 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
   return (
     <section className="welcome-screen transition-level-1" aria-labelledby="welcome-heading">
       <div className="journal-cover-frame">
-        {/* Subtle Journal Header Ornamentation */}
         <div className="cover-pretitle">{t.welcome.pretitle}</div>
         
         <h1 id="welcome-heading" className="cover-title">
@@ -22,7 +20,6 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
           <span className="divider-notch"></span>
         </div>
 
-        {/* Illustrated Compass Rose Motif (Spec Page 1 & 5) */}
         <div className="compass-motif-wrapper" aria-hidden="true">
           <svg className="compass-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="100" cy="100" r="92" stroke="var(--color-paper-200)" strokeWidth="1" strokeDasharray="3 3"/>
@@ -30,13 +27,11 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
             <circle cx="100" cy="100" r="64" stroke="var(--color-paper-200)" strokeWidth="1"/>
             <circle cx="100" cy="100" r="38" stroke="var(--color-ochre)" strokeWidth="1.2"/>
             
-            {/* Cardinal ticks */}
             <line x1="100" y1="8" x2="100" y2="192" stroke="var(--color-ink-500)" strokeWidth="1" opacity="0.4"/>
             <line x1="8" y1="100" x2="192" y2="100" stroke="var(--color-ink-500)" strokeWidth="1" opacity="0.4"/>
             <line x1="35" y1="35" x2="165" y2="165" stroke="var(--color-paper-200)" strokeWidth="0.8"/>
             <line x1="35" y1="165" x2="165" y2="35" stroke="var(--color-paper-200)" strokeWidth="0.8"/>
             
-            {/* North pointer needle */}
             <polygon points="100,24 106,94 100,100" fill="var(--color-terracotta)" />
             <polygon points="100,24 94,94 100,100" fill="#B35D3D" />
             <polygon points="100,176 105,106 100,100" fill="var(--color-ink-700)" />
@@ -54,7 +49,6 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
           {t.welcome.quote}
         </p>
 
-        {/* Three Pillars Formula (Spec Page 2) */}
         <div className="pillars-grid">
           <div className="pillar-card">
             <div className="pillar-header">
@@ -87,7 +81,6 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
           </div>
         </div>
 
-        {/* Guiding Protocol Note */}
         <div className="orientation-note">
           <ShieldCheck size={18} className="note-icon" />
           <div>
@@ -95,7 +88,6 @@ export const WelcomeScreen = ({ onBegin, activeLanguage }) => {
           </div>
         </div>
 
-        {/* Primary Action Button */}
         <div className="action-row">
           <button onClick={onBegin} className="btn btn-primary btn-large">
             <span>{t.welcome.openBtn}</span>
