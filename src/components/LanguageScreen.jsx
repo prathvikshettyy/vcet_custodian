@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - LanguageScreen
 import React from 'react';
 import { LANGUAGES } from '../data/fieldNotesData';
 import { UI_TRANSLATIONS } from '../data/translations';
@@ -18,7 +17,6 @@ export const LanguageScreen = ({ activeLanguage, setActiveLanguage, onConfirm })
           </p>
         </div>
 
-        {/* Language Grid */}
         <div className="language-grid" role="radiogroup" aria-label="Available languages">
           {LANGUAGES.map((lang) => {
             const isSelected = activeLanguage.id === lang.id;
@@ -62,7 +60,6 @@ export const LanguageScreen = ({ activeLanguage, setActiveLanguage, onConfirm })
           })}
         </div>
 
-        {/* Cultural Context Callout */}
         <div className="locale-context-box">
           <div className="context-title">
             <BookOpen size={16} />
@@ -73,7 +70,6 @@ export const LanguageScreen = ({ activeLanguage, setActiveLanguage, onConfirm })
           </p>
         </div>
 
-        {/* Action Controls */}
         <div className="action-footer">
           <button onClick={onConfirm} className="btn btn-primary btn-large">
             <span>{t.languageScreen.confirmBtn}</span>
