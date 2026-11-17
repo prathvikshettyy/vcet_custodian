@@ -33,6 +33,27 @@ export const JourneyComplete = ({
   );
   const [reflectionSaved, setReflectionSaved] = useState(false);
 
+  const handleExportCertificate = () => {
+    const certificateData = {
+      platform: "VCET Custodian",
+      covenant: "Living Culture Field Journal Charter",
+      timestamp: new Date().toISOString(),
+      language: activeLanguage?.name,
+      verifiedSeal: "Saligrama Guild Elders Council",
+      completedNotesCount: completedNotes.length,
+      reflection: reflectionText,
+      trustStatus: "100% Verified Adherence to Custodian Boundaries"
+    };
+
+    const blob = new Blob([JSON.stringify(certificateData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `custodian-covenant-certificate-${Date.now()}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section className="journey-complete-view transition-level-3-stamp" aria-labelledby="complete-heading">
       <div className="complete-journal-spread parchment-panel">
@@ -117,6 +138,11 @@ export const JourneyComplete = ({
         </div>
 
         <div className="complete-action-buttons">
+          <button onClick={handleExportCertificate} className="btn btn-secondary">
+            <Award size={16} />
+            <span>Export Certificate</span>
+          </button>
+
           <button onClick={onReturnToMap} className="btn btn-secondary">
             <RotateCcw size={16} />
             <span>{t.completeScreen.returnMapBtn}</span>
