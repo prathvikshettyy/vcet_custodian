@@ -1,4 +1,3 @@
-// VCET Custodian - Root Application Component
 import React, { useState, useEffect } from 'react';
 import { NavigationHeader } from './components/NavigationHeader';
 import { WelcomeScreen } from './components/WelcomeScreen';
@@ -11,7 +10,7 @@ import { FIELD_NOTES, LANGUAGES } from './data/fieldNotesData';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(1);
-  const [activeLanguage, setActiveLanguage] = useState(LANGUAGES[0]); // defaults to English
+  const [activeLanguage, setActiveLanguage] = useState(LANGUAGES[0]);
   const [notes, setNotes] = useState(FIELD_NOTES);
   const [selectedNote, setSelectedNote] = useState(FIELD_NOTES[0]);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
@@ -19,7 +18,6 @@ export default function App() {
   const [highContrast, setHighContrast] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Track viewport width for mobile bottom-sheet behavior
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -29,17 +27,16 @@ export default function App() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Handlers for screen transitions
   const handleOpenStory = (note) => {
     setSelectedNote(note);
     setNotes(prev => prev.map(n => n.id === note.id ? { ...n, status: n.status === 'protected' ? 'protected' : 'selected' } : n));
-    setCurrentScreen(4); // Screen 04: Story Scroll
+    setCurrentScreen(4);
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
   const handleOpenCustodian = (note) => {
     if (note) setSelectedNote(note);
-    setCurrentScreen(5); // Screen 05: Custodian Profile
+    setCurrentScreen(5);
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
@@ -47,12 +44,12 @@ export default function App() {
     if (selectedNote && selectedNote.status !== 'protected') {
       setNotes(prev => prev.map(n => n.id === selectedNote.id ? { ...n, status: 'completed' } : n));
     }
-    setCurrentScreen(6); // Screen 06: Journey Complete
+    setCurrentScreen(6);
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
   const handleReturnToMap = () => {
-    setCurrentScreen(3); // Screen 03: Living Map
+    setCurrentScreen(3);
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
