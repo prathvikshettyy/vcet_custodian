@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - StoryScroll
 import React, { useState } from 'react';
 import { 
   ArrowLeft, 
@@ -27,14 +26,12 @@ export const StoryScroll = ({
 }) => {
   const [isSaved, setIsSaved] = useState(false);
 
-  // Derive localized version of note based on currently active language
   const localizedNote = getLocalizedNote(note, activeLanguage.id);
   const t = UI_TRANSLATIONS[activeLanguage.id] || UI_TRANSLATIONS.en;
 
   return (
     <article className="story-scroll-view transition-level-3-unfold" aria-labelledby="story-title">
       <div className="story-journal-container">
-        {/* Breadcrumb Navigation Bar */}
         <div className="story-nav-bar">
           <button onClick={onBackToMap} className="btn btn-secondary nav-back-btn">
             <ArrowLeft size={16} />
@@ -54,13 +51,11 @@ export const StoryScroll = ({
           </div>
         </div>
 
-        {/* Spec Page 7: Journal Entry Layout Header */}
         <div className="journal-entry-header">
           <div className="field-meta-row">
             <span className="journey-label">{localizedNote.label}</span>
             
             <div className="verification-badges-group">
-              {/* Spec Page 8: CUSTODIAN VERIFIED small green seal */}
               <span className="seal-verified" title="Verified by community elders">
                 <ShieldCheck size={14} />
                 {localizedNote.verifiedBadge}
@@ -85,12 +80,10 @@ export const StoryScroll = ({
 
           <div className="story-divider"></div>
 
-          {/* Pull quote in Cormorant Garamond italic (Spec Page 7) */}
           <blockquote className="custodian-pull-quote">
             “{localizedNote.quote}”
           </blockquote>
 
-          {/* Custodian Attribution (Spec Page 7) */}
           <div className="custodian-attribution-bar">
             <div className="custodian-info">
               <span className="told-by-prefix">{t.storyScreen.toldBy}</span>
@@ -114,14 +107,12 @@ export const StoryScroll = ({
           </div>
         </div>
 
-        {/* Spec Page 8: Audio Experience */}
         <AudioPlayer
           note={localizedNote}
           activeLanguage={activeLanguage}
           onAudioPlayStateChange={onAudioPlayStateChange}
         />
 
-        {/* Narrative Field Body (Spec Page 4: 16-18px min 16px Inter) */}
         <div className="journal-narrative-content">
           <p className="narrative-paragraph lead-p">
             {localizedNote.bodyText}
@@ -132,7 +123,6 @@ export const StoryScroll = ({
           </p>
         </div>
 
-        {/* Spec Page 8: Custodian Boundary Pattern */}
         {localizedNote.custodianBoundary && localizedNote.custodianBoundary.hasBoundary && (
           <CustodianBoundary
             boundary={localizedNote.custodianBoundary}
@@ -141,7 +131,6 @@ export const StoryScroll = ({
           />
         )}
 
-        {/* Chapter Closure Action Bar */}
         <div className="story-closure-footer">
           <div className="closure-note">
             <CheckCircle2 size={16} className="check-icon" />
