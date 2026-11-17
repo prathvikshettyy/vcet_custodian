@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - AudioPlayer
 import React, { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, Volume2, Globe } from 'lucide-react';
 import { globalAudio } from '../utils/audioEngine';
@@ -8,7 +7,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
 
-  // Initialize and automatically adapt active transcript tab when activeLanguage changes
   const initialTab = activeLanguage.id === 'kn' ? 'kannada' :
                      activeLanguage.id === 'tu' ? 'tulu' :
                      activeLanguage.id === 'hi' ? 'hindi' : 'english';
@@ -18,7 +16,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
   const [prevNoteId, setPrevNoteId] = useState(note.id);
   const [actualDuration, setActualDuration] = useState(note.audioDuration || 26);
 
-  // Synchronize state during render when props change
   if (activeLanguage.id !== prevLangId) {
     setPrevLangId(activeLanguage.id);
     if (activeLanguage.id === 'kn') setActiveTab('kannada');
@@ -37,7 +34,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
   const duration = actualDuration || note.audioDuration || 26;
   const t = UI_TRANSLATIONS[activeLanguage.id] || UI_TRANSLATIONS.en;
 
-  // Get current transcript text based on active tab
   const getTranscriptText = (tab = activeTab) => {
     if (!note.audioTranscript) return "";
     if (tab === 'kannada') return note.audioTranscript.kannada || note.audioTranscript.original;
@@ -124,7 +120,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
 
   return (
     <div className={`audio-experience-container parchment-panel ${isPlaying ? 'is-playing' : ''}`} aria-label="Custodian Field Audio Recording">
-      {/* Audio Header Line */}
       <div className="audio-header">
         <div className="audio-provenance">
           <Volume2 size={16} className={`speaker-icon ${isPlaying ? 'pulse' : ''}`} />
@@ -139,7 +134,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
         </div>
       </div>
 
-      {/* Custodian Voice Status Banner */}
       <div className={`audio-voice-banner ${isPlaying ? 'active' : 'idle'}`}>
         <div className="voice-badge-indicator">
           {isPlaying ? (
@@ -172,7 +166,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
         </div>
       </div>
 
-      {/* Main Controls Row: Play/Pause, Restart, and Scrubber */}
       <div className="audio-controls-row">
         <button
           onClick={togglePlay}
@@ -210,7 +203,6 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
         </div>
       </div>
 
-      {/* Structured Transcript & Translation Toggles */}
       <div className="transcript-section">
         <div className="transcript-tabs" role="tablist" aria-label="Transcript languages">
           <button
