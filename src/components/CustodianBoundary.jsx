@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - CustodianBoundary
 import React, { useState } from 'react';
 import { Lock, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { UI_TRANSLATIONS } from '../data/translations';
@@ -12,28 +11,23 @@ export const CustodianBoundary = ({ boundary, custodianName, activeLanguage }) =
   return (
     <div className="custodian-boundary-container parchment-panel" role="region" aria-label="Custodian Protected Cultural Boundary">
       <div className="boundary-card-inner">
-        {/* Spec Page 8 Header: ~ LOCKED ~ */}
         <div className="boundary-pill">
           <Lock size={12} className="lock-icon" />
           <span>{t.storyScreen.boundary.locked}</span>
         </div>
 
-        {/* CUSTODIAN BOUNDARY Heading */}
         <h3 className="boundary-title">{boundary.boundaryTitle || t.storyScreen.boundary.title}</h3>
 
         <div className="boundary-divider"></div>
 
-        {/* Boundary Core Reason */}
         <div className="boundary-lead">
           {boundary.reason || "This part of the tradition isn't publicly shared."}
         </div>
 
-        {/* Cultural Explanation */}
         <p className="boundary-detail">
           {boundary.explanation}
         </p>
 
-        {/* Respect Action Button (Spec Page 9: Forest / neutral treatment) */}
         <div className="boundary-actions">
           {!acknowledged ? (
             <button
