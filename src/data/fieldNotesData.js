@@ -422,6 +422,7 @@ export const LANGUAGES = [
   { id: "en", name: "English", nativeName: "English", badge: "Primary UI / Translated Audio", audioAvailable: true },
   { id: "kn", name: "Kannada", nativeName: "ಕನ್ನಡ", badge: "Original Custodian Audio", audioAvailable: true },
   { id: "tu", name: "Tulu", nativeName: "ತುಳು", badge: "Original Oral Dialect", audioAvailable: true },
+  { id: "ml", name: "Malayalam", nativeName: "മലയാളം", badge: "Malabar Heritage Audio", audioAvailable: true },
   { id: "hi", name: "Hindi", nativeName: "हिन्दी", badge: "Translations Available", audioAvailable: false }
 ];
 
