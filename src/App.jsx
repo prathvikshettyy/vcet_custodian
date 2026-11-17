@@ -27,6 +27,19 @@ export default function App() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+      const num = parseInt(e.key, 10);
+      if (num >= 1 && num <= 6) {
+        setCurrentScreen(num);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleOpenStory = (note) => {
     setSelectedNote(note);
     setNotes(prev => prev.map(n => n.id === note.id ? { ...n, status: n.status === 'protected' ? 'protected' : 'selected' } : n));
