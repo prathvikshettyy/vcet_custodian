@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - JourneyComplete
 import React, { useState } from 'react';
 import { 
   CheckCircle2, 
@@ -41,7 +40,6 @@ export const JourneyComplete = ({
           <span className="journey-label">{t.completeScreen.specTag}</span>
         </div>
 
-        {/* Animated Journal Stamp / Seal (Spec Page 6 & 12) */}
         <div className="stamp-seal-wrapper">
           <div className="expedition-stamp-seal" aria-label="Field Journal Verified Seal">
             <div className="stamp-border-outer">
@@ -65,7 +63,6 @@ export const JourneyComplete = ({
           {t.completeScreen.lead}
         </p>
 
-        {/* Expedition Metrics Summary */}
         <div className="metrics-summary-grid">
           <div className="metric-cell">
             <div className="metric-number">03</div>
@@ -86,7 +83,6 @@ export const JourneyComplete = ({
           </div>
         </div>
 
-        {/* Interactive Field Reflection Ledger */}
         <div className="reflection-ledger-box">
           <div className="ledger-header">
             <PenTool size={16} className="pen-icon" />
@@ -120,7 +116,6 @@ export const JourneyComplete = ({
           </div>
         </div>
 
-        {/* Final Navigation Actions */}
         <div className="complete-action-buttons">
           <button onClick={onReturnToMap} className="btn btn-secondary">
             <RotateCcw size={16} />
