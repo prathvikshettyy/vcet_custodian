@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - NavigationHeader
 import React, { useState } from 'react';
 import { Compass, Volume2, Eye, Wind, Globe, ChevronDown, Check } from 'lucide-react';
 import { LANGUAGES } from '../data/fieldNotesData';
@@ -30,7 +29,6 @@ export const NavigationHeader = ({
   return (
     <header className="site-header" role="banner">
       <div className="header-inner">
-        {/* Brand identity */}
         <div className="brand" onClick={() => setCurrentScreen(1)} tabIndex={0} role="button" aria-label="Go to Welcome screen">
           <div className="brand-crest">
             <Compass size={18} strokeWidth={2} />
@@ -41,7 +39,6 @@ export const NavigationHeader = ({
           </div>
         </div>
 
-        {/* Screen Breadcrumb / Step Navigation */}
         <nav className="screen-nav" aria-label="Prototype screens">
           <ol className="screen-list">
             {screens.map(s => {
@@ -64,7 +61,6 @@ export const NavigationHeader = ({
           </ol>
         </nav>
 
-        {/* Global Utilities & Accessibility Controls */}
         <div className="header-actions">
           {isPlayingAudio && (
             <div className="audio-live-badge" title="Field audio is playing">
@@ -73,7 +69,6 @@ export const NavigationHeader = ({
             </div>
           )}
 
-          {/* Quick Language Switcher Dropdown in Header */}
           <div className="lang-picker-wrapper">
             <button
               className="lang-picker-btn"
