@@ -186,6 +186,26 @@ export const AudioPlayer = ({ note, activeLanguage, onAudioPlayStateChange }) =>
         </button>
 
         <div className="scrubber-track-wrapper">
+          <div className="waveform-visualizer-bar" aria-hidden="true" style={{ display: 'flex', alignItems: 'center', gap: '3px', height: '16px', marginBottom: '6px' }}>
+            {[40, 75, 30, 90, 60, 45, 85, 100, 70, 50, 95, 80, 65, 40, 85, 90, 55, 35, 75, 90, 60, 45, 80, 100, 70, 50].map((h, i) => {
+              const progressPct = (currentTime / (duration || 1)) * 100;
+              const barPct = (i / 26) * 100;
+              const isPast = barPct <= progressPct;
+              return (
+                <span
+                  key={i}
+                  style={{
+                    flex: 1,
+                    height: isPlaying ? `${Math.max(15, (h * (0.6 + 0.4 * Math.sin((currentTime * 4) + i))))}%` : `${h * 0.4}%`,
+                    backgroundColor: isPast ? 'var(--color-terracotta)' : 'var(--color-paper-200)',
+                    borderRadius: '2px',
+                    transition: 'height 150ms ease, background-color 200ms ease'
+                  }}
+                />
+              );
+            })}
+          </div>
+
           <div className="time-labels">
             <span className="time-current">{formatTime(currentTime)}</span>
             <span className="time-total">{formatTime(duration)}</span>
