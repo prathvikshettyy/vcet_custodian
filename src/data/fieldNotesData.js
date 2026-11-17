@@ -1,5 +1,5 @@
-// VCET Custodian - Cultural Field Notes & Hotspots
 /**
+ * Cultural Field Notes & Hotspots Data
  * Living Cultural Content Model with Multi-Language Localization
  * Supports English (en), Kannada (kn), Tulu (tu), and Hindi (hi)
  */
@@ -54,7 +54,6 @@ export const FIELD_NOTES = [
       explanation: "The secret consecration of the Kirita (headdress) and the silent invocations chanted in the green-room (Chowki) prior to entering the stage are confidential hereditary rites reserved solely for initiated performers and hereditary gurus.",
       respectNote: "Respect the boundary. The custodian invites travelers to appreciate the public performance while honoring the private ritual hearth."
     },
-    // Multi-Language Overrides
     locales: {
       kn: {
         title: "ಯಕ್ಷಗಾನ ಕಲೆ",
