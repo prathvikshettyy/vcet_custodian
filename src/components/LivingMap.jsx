@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - LivingMap
 import React, { useState } from 'react';
 import { 
   Compass, 
@@ -43,7 +42,6 @@ export const LivingMap = ({
 
   return (
     <section className="living-map-viewport transition-level-1" aria-label="Interactive Living Cultural Map">
-      {/* Top Map Context & Filtering Toolbar */}
       <div className="map-toolbar">
         <div className="map-meta-info">
           <span className="journey-label">{t.mapScreen.sector}</span>
@@ -102,7 +100,6 @@ export const LivingMap = ({
         </div>
       </div>
 
-      {/* Main Map Visual Canvas */}
       <div className="map-canvas-container">
         <div 
           className="map-svg-wrapper"
@@ -131,16 +128,13 @@ export const LivingMap = ({
               </filter>
             </defs>
 
-            {/* Background Muted Paper Surface */}
             <rect width="920" height="860" fill="#F7F1E3" />
 
-            {/* Arabian Sea Coastal Basin */}
             <path
               d="M0,0 L210,0 Q185,140 220,280 Q250,420 220,540 Q180,680 230,860 L0,860 Z"
               fill="url(#arabianSeaGrad)"
             />
 
-            {/* Hand-Drawn Coastal Linework */}
             <path
               d="M210,0 C190,70 180,150 200,220 C220,290 238,360 228,430 C218,500 195,570 205,640 C215,710 240,780 230,860"
               fill="none"
@@ -157,12 +151,10 @@ export const LivingMap = ({
               opacity="0.4"
             />
 
-            {/* Arabian Sea Calligraphic Cartographic Label */}
             <text x="75" y="440" fill="#766A59" fontSize="13" fontFamily="var(--font-display)" fontStyle="italic" letterSpacing="0.25em" transform="rotate(-90 75 440)">
               THE ARABIAN SEA (LAKSHADWEEP SEA)
             </text>
 
-            {/* Hand-Drawn Rivers */}
             <g className="rivers-group" stroke="#8E9B90" fill="none" opacity="0.85">
               <path d="M590,320 Q480,330 380,370 T226,388" strokeWidth="2.2" />
               <path d="M540,300 Q490,320 460,335" strokeWidth="1.2" />
@@ -173,7 +165,6 @@ export const LivingMap = ({
               <text x="410" y="642" fill="#766A59" fontSize="10" fontFamily="var(--font-display)" fontStyle="italic">Netravati River</text>
             </g>
 
-            {/* Western Ghats Mountain Ridges */}
             <g className="mountains-group" stroke="#51483B" fill="none" opacity="0.65">
               <path d="M660,160 L685,120 L710,160 M690,160 L715,110 L740,160 M725,160 L750,125 L775,160" strokeWidth="1.4"/>
               <path d="M620,270 L650,220 L680,270 M660,270 L690,210 L720,270" strokeWidth="1.4"/>
@@ -186,7 +177,6 @@ export const LivingMap = ({
               </text>
             </g>
 
-            {/* Ancient Cartographic Roads */}
             <g className="roads-group" stroke="#9F927E" strokeWidth="1.2" strokeDasharray="3 4" fill="none" opacity="0.75">
               <path d="M530,220 Q440,300 320,390" />
               <path d="M320,390 Q380,460 440,520" />
@@ -194,7 +184,6 @@ export const LivingMap = ({
               <path d="M440,520 Q490,580 540,640" />
             </g>
 
-            {/* Illustrated Landmarks */}
             <g className="landmarks" fill="none" stroke="#766A59" strokeWidth="1.2">
               <g transform="translate(290, 375)">
                 <path d="M0,15 L15,2 L30,15 L30,28 L0,28 Z" fill="#EFE4CC" />
@@ -217,14 +206,12 @@ export const LivingMap = ({
               </g>
             </g>
 
-            {/* Geographical Region Labels */}
             <text x="310" y="425" fill="#51483B" fontSize="13" fontFamily="var(--font-display)" fontWeight="600">Udupi</text>
             <text x="430" y="555" fill="#51483B" fontSize="13" fontFamily="var(--font-display)" fontWeight="600">Moodabidri</text>
             <text x="560" y="675" fill="#51483B" fontSize="13" fontFamily="var(--font-display)" fontWeight="600">Devarakadu</text>
             <text x="350" y="735" fill="#51483B" fontSize="13" fontFamily="var(--font-display)" fontWeight="600">Mangalore Coast</text>
             <text x="510" y="255" fill="#51483B" fontSize="13" fontFamily="var(--font-display)" fontWeight="600">Ilkal</text>
 
-            {/* Interactive Markers */}
             {filteredNotes.map((note) => {
               const localizedMarkerNote = getLocalizedNote(note, activeLanguage?.id);
               const isSelected = activeNote.id === note.id;
@@ -343,7 +330,6 @@ export const LivingMap = ({
               );
             })}
 
-            {/* Traveller Position Motif */}
             <g transform={`translate(${activeNote.coordinates.x - 30}, ${activeNote.coordinates.y - 25})`} className="traveller-motif">
               <circle cx="0" cy="0" r="10" fill="var(--color-ochre)" stroke="#FFF" strokeWidth="1.5" />
               <path d="M-5,0 L5,0 M0,-5 L0,5" stroke="var(--color-paper-50)" strokeWidth="1.5" />
@@ -353,7 +339,6 @@ export const LivingMap = ({
               </text>
             </g>
 
-            {/* Compass Rose */}
             <g transform="translate(820, 90)" opacity="0.8">
               <circle cx="0" cy="0" r="42" stroke="var(--color-paper-200)" strokeWidth="1" />
               <circle cx="0" cy="0" r="30" stroke="var(--color-ink-500)" strokeWidth="0.8" />
@@ -368,7 +353,6 @@ export const LivingMap = ({
           </svg>
         </div>
 
-        {/* Side Narrative Preview Panel */}
         <aside className="story-preview-sheet parchment-panel transition-level-2-expand" aria-label="Field Note Preview">
           <div className="preview-top-row">
             <span className="journey-label">{activeNote.label}</span>
@@ -429,7 +413,6 @@ export const LivingMap = ({
         </aside>
       </div>
 
-      {/* Map Legend Footer Bar */}
       <footer className="map-legend-bar" aria-label="Map legend">
         <div className="legend-items">
           <div className="legend-item">
