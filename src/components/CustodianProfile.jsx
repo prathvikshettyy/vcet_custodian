@@ -96,6 +96,21 @@ export const CustodianProfile = ({
           </div>
         </div>
 
+        <div className="custodian-patronage-card">
+          <div className="patronage-header">
+            <h4 className="patronage-title">Direct Cultural Patronage & Preservation Fund</h4>
+            <span className="patronage-badge">100% Direct to Guild</span>
+          </div>
+          <p className="patronage-desc">
+            Directly support {custodian.name} and the regional artisan council for palm-leaf manuscript preservation, traditional costume restoration, and hereditary student apprenticeships.
+          </p>
+          <div className="patronage-options">
+            <button className="btn btn-secondary patronage-btn">Contribute ₹250 (Student Kit)</button>
+            <button className="btn btn-secondary patronage-btn">Contribute ₹500 (Manuscript Archival)</button>
+            <button className="btn btn-primary patronage-btn">Commission Oral History</button>
+          </div>
+        </div>
+
         <div className="profile-actions-footer">
           <button onClick={onBackToStory} className="btn btn-secondary">
             {t.custodianScreen.returnBtn}
