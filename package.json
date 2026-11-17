@@ -4,6 +4,22 @@
   "private": true,
   "type": "module",
   "description": "VCET Custodian - Culture on Its Own Terms: A community-owned cultural preservation platform",
+  "homepage": "https://vcetcustodian.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prathvikshettyy/vcet_custodian.git"
+  },
+  "keywords": [
+    "vcet-hackathon",
+    "resurrect-hackathon",
+    "cultural-preservation",
+    "heritage",
+    "kannada",
+    "tulu",
+    "field-journal",
+    "react19",
+    "web-audio"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
