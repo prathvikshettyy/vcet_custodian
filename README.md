@@ -4,7 +4,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live-Website-brightgreen?style=for-the-badge&logo=vercel)](https://custodian-chi.vercel.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/prathvikshettyy/vcet_custodian)
-[![Manipal Hackathon 2026](https://img.shields.io/badge/Manipal-Hackathon_2026-blue?style=for-the-badge)]()
+[![VCET Resurrect Hackathon](https://img.shields.io/badge/VCET-Resurrect_Hackathon_2026-blue?style=for-the-badge)]()
 [![Track](https://img.shields.io/badge/Track-Culture_and_Community-orange?style=for-the-badge)]()
 
 ---
