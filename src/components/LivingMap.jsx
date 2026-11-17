@@ -11,7 +11,8 @@ import {
   RotateCcw,
   Sparkles,
   MapPin,
-  Filter
+  Filter,
+  Search
 } from 'lucide-react';
 import { getLocalizedNote } from '../data/fieldNotesData';
 import { UI_TRANSLATIONS } from '../data/translations';
@@ -26,6 +27,7 @@ export const LivingMap = ({
   activeLanguage
 }) => {
   const [filterType, setFilterType] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [hoveredNote, setHoveredNote] = useState(null);
   const [zoomLevel, setZoomLevel] = useState(1);
 
@@ -34,6 +36,13 @@ export const LivingMap = ({
   const activeNote = getLocalizedNote(rawActiveNote, activeLanguage?.id);
 
   const filteredNotes = fieldNotes.filter(note => {
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      const matchTitle = note.title?.toLowerCase().includes(q);
+      const matchLoc = note.location?.toLowerCase().includes(q);
+      const matchCust = note.custodian?.name?.toLowerCase().includes(q);
+      if (!matchTitle && !matchLoc && !matchCust) return false;
+    }
     if (filterType === 'all') return true;
     if (filterType === 'protected') return note.status === 'protected' || note.isProtected;
     if (filterType === 'completed') return note.status === 'completed';
@@ -49,6 +58,18 @@ export const LivingMap = ({
         </div>
 
         <div className="map-controls">
+          <div className="search-input-wrapper">
+            <Search size={14} className="search-icon" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search lore, location, or custodian..."
+              className="map-search-input"
+              aria-label="Search cultural traditions"
+            />
+          </div>
+
           <div className="filter-group" role="group" aria-label="Tradition filter">
             <Filter size={14} className="filter-icon" />
             <button

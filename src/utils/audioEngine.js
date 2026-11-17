@@ -381,6 +381,23 @@ class CustodianAudioEngine {
     this.listeners.add(cb);
     return () => this.listeners.delete(cb);
   }
+
+  setMasterVolume(volume) {
+    const val = Math.max(0, Math.min(1, volume));
+    if (this.audioEl) {
+      this.audioEl.volume = val;
+    }
+    if (this.currentUtterance) {
+      this.currentUtterance.volume = val;
+    }
+  }
+
+  setDroneVolume(volume) {
+    if (this.gainNode && this.ctx) {
+      const val = Math.max(0, Math.min(0.1, volume * 0.05));
+      this.gainNode.gain.setValueAtTime(val, this.ctx.currentTime);
+    }
+  }
 }
 
 export const globalAudio = new CustodianAudioEngine();
