@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -25,6 +25,19 @@ export const StoryScroll = ({
   onAudioPlayStateChange
 }) => {
   const [isSaved, setIsSaved] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const progress = Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100));
+        setScrollProgress(Math.round(progress));
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const localizedNote = getLocalizedNote(note, activeLanguage.id);
   const t = UI_TRANSLATIONS[activeLanguage.id] || UI_TRANSLATIONS.en;
@@ -39,6 +52,9 @@ export const StoryScroll = ({
           </button>
 
           <div className="story-quick-actions">
+            <span className="reading-progress-chip" style={{ fontSize: '0.78rem', color: 'var(--color-ink-500)', marginRight: '8px' }}>
+              {scrollProgress}% Read
+            </span>
             <button
               onClick={() => setIsSaved(!isSaved)}
               className={`util-btn ${isSaved ? 'active' : ''}`}
