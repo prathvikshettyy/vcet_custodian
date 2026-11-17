@@ -1,4 +1,3 @@
-// VCET Custodian - Multilingual Localization Dictionaries
 /**
  * CUSTODIAN Localization & Translation Dictionary
  * Provides complete multilingual support across English, Kannada, Tulu, and Hindi
