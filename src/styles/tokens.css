@@ -60,3 +60,19 @@
   --ease-journal: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-page-turn: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+[data-theme="dark-parchment"] {
+  --color-paper-50: #1C1914;
+  --color-paper-100: #25221C;
+  --color-paper-200: #3A352D;
+  --color-paper-300: #4F473E;
+  --color-ink-900: #F7F1E3;
+  --color-ink-700: #DFCFAD;
+  --color-ink-500: #A89B86;
+  --color-ink-300: #766A59;
+  --color-forest-soft: #202D22;
+  --color-terracotta-soft: rgba(214, 114, 77, 0.18);
+  --color-ochre-soft: #2D271B;
+  --shadow-parchment: 0 1px 3px rgba(0, 0, 0, 0.3), 0 6px 16px rgba(0, 0, 0, 0.25);
+  --shadow-panel: 0 4px 20px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
