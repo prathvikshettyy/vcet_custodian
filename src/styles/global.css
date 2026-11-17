@@ -1,7 +1,6 @@
-/* VCET Custodian - Global Typography & Theme */
 @import './tokens.css';
 
-/* Modern Reset */
+/* Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +19,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Restrained Parchment Grain Texture (Almost invisible at standard viewing distance) */
 body {
   background-color: var(--color-paper-50);
   background-image: 
@@ -30,7 +28,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Headings & Display Typography */
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
   font-weight: 600;
@@ -45,7 +42,6 @@ p {
   max-width: 68ch;
 }
 
-/* Spec Page 4: Journey Label */
 .journey-label {
   font-family: var(--font-ui);
   font-size: var(--text-journey-label);
@@ -66,13 +62,11 @@ p {
   background-color: var(--color-terracotta);
 }
 
-/* Focus Visible for Accessibility */
 :focus-visible {
   outline: 2px solid var(--color-terracotta);
   outline-offset: 3px;
 }
 
-/* Modern Button Treatments (Spec Page 9) - Never skeuomorphic, no faux leather */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -91,7 +85,6 @@ p {
   user-select: none;
 }
 
-/* Primary Button: Solid terracotta fill, white label */
 .btn-primary {
   background-color: var(--color-terracotta);
   color: #FFFFFF;
@@ -109,7 +102,6 @@ p {
   transform: translateY(0);
 }
 
-/* Secondary Button: Text button, no fill or border */
 .btn-secondary {
   color: var(--color-ink-900);
   padding: 0.6rem 0.8rem;
@@ -120,7 +112,6 @@ p {
   color: var(--color-terracotta);
 }
 
-/* Respect Action: Forest / neutral treatment */
 .btn-respect {
   background-color: var(--color-forest-soft);
   color: var(--color-forest);
@@ -135,7 +126,6 @@ p {
   border-color: var(--color-forest);
 }
 
-/* Seals and Badges (Spec Page 8) */
 .seal-verified {
   display: inline-flex;
   align-items: center;
@@ -170,7 +160,6 @@ p {
   background-color: var(--color-forest-soft);
 }
 
-/* Card / Parchment Panel Foundation */
 .parchment-panel {
   background-color: var(--color-paper-100);
   border: 1px solid var(--color-paper-200);
@@ -178,7 +167,6 @@ p {
   box-shadow: var(--shadow-parchment);
 }
 
-/* Motion Levels (Spec Page 6) */
 .transition-level-1 {
   animation: level1Nav var(--duration-nav) var(--ease-journal) forwards;
 }
@@ -261,7 +249,6 @@ p {
   }
 }
 
-/* Reduced Motion Fallback: Spec Page 6 & 10 */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -285,7 +272,6 @@ p {
   }
 }
 
-/* Layout Utilities */
 .app-container {
   min-height: 100vh;
   display: flex;
