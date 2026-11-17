@@ -1,4 +1,3 @@
-// VCET Custodian UI Component - CustodianProfile
 import React from 'react';
 import { 
   ArrowLeft, 
@@ -28,7 +27,6 @@ export const CustodianProfile = ({
   return (
     <section className="custodian-profile-view transition-level-3-pageturn" aria-labelledby="custodian-name">
       <div className="profile-journal-card parchment-panel">
-        {/* Navigation Bar */}
         <div className="profile-top-bar">
           <button onClick={onBackToStory} className="btn btn-secondary profile-back-btn">
             <ArrowLeft size={16} />
@@ -38,7 +36,6 @@ export const CustodianProfile = ({
           <span className="journey-label">{t.custodianScreen.specTag}</span>
         </div>
 
-        {/* Profile Header & Provenance Shield */}
         <div className="profile-hero">
           <div className="custodian-monogram-crest">
             <span className="crest-initial">{custodian.name[0]}</span>
@@ -64,7 +61,6 @@ export const CustodianProfile = ({
           </div>
         </div>
 
-        {/* Heritage Lineage & Oral Authority */}
         <div className="profile-section-block">
           <h3 className="section-label">{t.custodianScreen.lineageTitle}</h3>
           <p className="lineage-quote">
@@ -75,7 +71,6 @@ export const CustodianProfile = ({
           </p>
         </div>
 
-        {/* Cultural Consent & Trust Framework */}
         <div className="consent-framework-box">
           <div className="framework-header">
             <HeartHandshake size={18} className="framework-icon" />
@@ -101,7 +96,6 @@ export const CustodianProfile = ({
           </div>
         </div>
 
-        {/* Bottom Actions */}
         <div className="profile-actions-footer">
           <button onClick={onBackToStory} className="btn btn-secondary">
             {t.custodianScreen.returnBtn}
